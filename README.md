@@ -2,6 +2,8 @@
 
 A self-hosted, single-user analytics dashboard for tracking your Claude Code usage statistics. Deploy for free on GitHub Pages with zero configuration.
 
+![Dashboard Preview](images/example-site.png)
+
 ![Dashboard Preview](https://img.shields.io/badge/Status-Active-success)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 ![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-brightgreen)
