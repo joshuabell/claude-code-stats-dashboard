@@ -5,6 +5,243 @@
 // Config will be available as window.CONFIG
 
 // ============================================
+// ASCII ART FONT (Block style, 6 lines tall)
+// ============================================
+
+const ASCII_FONT = {
+  'A': [
+    ' █████╗ ',
+    '██╔══██╗',
+    '███████║',
+    '██╔══██║',
+    '██║  ██║',
+    '╚═╝  ╚═╝'
+  ],
+  'B': [
+    '██████╗ ',
+    '██╔══██╗',
+    '██████╔╝',
+    '██╔══██╗',
+    '██████╔╝',
+    '╚═════╝ '
+  ],
+  'C': [
+    ' ██████╗',
+    '██╔════╝',
+    '██║     ',
+    '██║     ',
+    '╚██████╗',
+    ' ╚═════╝'
+  ],
+  'D': [
+    '██████╗ ',
+    '██╔══██╗',
+    '██║  ██║',
+    '██║  ██║',
+    '██████╔╝',
+    '╚═════╝ '
+  ],
+  'E': [
+    '███████╗',
+    '██╔════╝',
+    '█████╗  ',
+    '██╔══╝  ',
+    '███████╗',
+    '╚══════╝'
+  ],
+  'F': [
+    '███████╗',
+    '██╔════╝',
+    '█████╗  ',
+    '██╔══╝  ',
+    '██║     ',
+    '╚═╝     '
+  ],
+  'G': [
+    ' ██████╗ ',
+    '██╔════╝ ',
+    '██║  ███╗',
+    '██║   ██║',
+    '╚██████╔╝',
+    ' ╚═════╝ '
+  ],
+  'H': [
+    '██╗  ██╗',
+    '██║  ██║',
+    '███████║',
+    '██╔══██║',
+    '██║  ██║',
+    '╚═╝  ╚═╝'
+  ],
+  'I': [
+    '██╗',
+    '██║',
+    '██║',
+    '██║',
+    '██║',
+    '╚═╝'
+  ],
+  'J': [
+    '     ██╗',
+    '     ██║',
+    '     ██║',
+    '██   ██║',
+    '╚█████╔╝',
+    ' ╚════╝ '
+  ],
+  'K': [
+    '██╗  ██╗',
+    '██║ ██╔╝',
+    '█████╔╝ ',
+    '██╔═██╗ ',
+    '██║  ██╗',
+    '╚═╝  ╚═╝'
+  ],
+  'L': [
+    '██╗     ',
+    '██║     ',
+    '██║     ',
+    '██║     ',
+    '███████╗',
+    '╚══════╝'
+  ],
+  'M': [
+    '███╗   ███╗',
+    '████╗ ████║',
+    '██╔████╔██║',
+    '██║╚██╔╝██║',
+    '██║ ╚═╝ ██║',
+    '╚═╝     ╚═╝'
+  ],
+  'N': [
+    '███╗   ██╗',
+    '████╗  ██║',
+    '██╔██╗ ██║',
+    '██║╚██╗██║',
+    '██║ ╚████║',
+    '╚═╝  ╚═══╝'
+  ],
+  'O': [
+    ' ██████╗ ',
+    '██╔═══██╗',
+    '██║   ██║',
+    '██║   ██║',
+    '╚██████╔╝',
+    ' ╚═════╝ '
+  ],
+  'P': [
+    '██████╗ ',
+    '██╔══██╗',
+    '██████╔╝',
+    '██╔═══╝ ',
+    '██║     ',
+    '╚═╝     '
+  ],
+  'Q': [
+    ' ██████╗ ',
+    '██╔═══██╗',
+    '██║   ██║',
+    '██║▄▄ ██║',
+    '╚██████╔╝',
+    ' ╚══▀▀═╝ '
+  ],
+  'R': [
+    '██████╗ ',
+    '██╔══██╗',
+    '██████╔╝',
+    '██╔══██╗',
+    '██║  ██║',
+    '╚═╝  ╚═╝'
+  ],
+  'S': [
+    '███████╗',
+    '██╔════╝',
+    '███████╗',
+    '╚════██║',
+    '███████║',
+    '╚══════╝'
+  ],
+  'T': [
+    '████████╗',
+    '╚══██╔══╝',
+    '   ██║   ',
+    '   ██║   ',
+    '   ██║   ',
+    '   ╚═╝   '
+  ],
+  'U': [
+    '██╗   ██╗',
+    '██║   ██║',
+    '██║   ██║',
+    '██║   ██║',
+    '╚██████╔╝',
+    ' ╚═════╝ '
+  ],
+  'V': [
+    '██╗   ██╗',
+    '██║   ██║',
+    '██║   ██║',
+    '╚██╗ ██╔╝',
+    ' ╚████╔╝ ',
+    '  ╚═══╝  '
+  ],
+  'W': [
+    '██╗    ██╗',
+    '██║    ██║',
+    '██║ █╗ ██║',
+    '██║███╗██║',
+    '╚███╔███╔╝',
+    ' ╚══╝╚══╝ '
+  ],
+  'X': [
+    '██╗  ██╗',
+    '╚██╗██╔╝',
+    ' ╚███╔╝ ',
+    ' ██╔██╗ ',
+    '██╔╝ ██╗',
+    '╚═╝  ╚═╝'
+  ],
+  'Y': [
+    '██╗   ██╗',
+    '╚██╗ ██╔╝',
+    ' ╚████╔╝ ',
+    '  ╚██╔╝  ',
+    '   ██║   ',
+    '   ╚═╝   '
+  ],
+  'Z': [
+    '███████╗',
+    '╚══███╔╝',
+    '  ███╔╝ ',
+    ' ███╔╝  ',
+    '███████╗',
+    '╚══════╝'
+  ],
+  ' ': [
+    '   ',
+    '   ',
+    '   ',
+    '   ',
+    '   ',
+    '   '
+  ]
+};
+
+function renderAsciiText(text) {
+  const upperText = text.toUpperCase();
+  const lines = ['', '', '', '', '', ''];
+
+  for (const char of upperText) {
+    const charArt = ASCII_FONT[char] || ASCII_FONT[' '];
+    for (let i = 0; i < 6; i++) {
+      lines[i] += charArt[i];
+    }
+  }
+
+  return lines.join('\n');
+}
+
+// ============================================
 // THEME MANAGEMENT
 // ============================================
 
@@ -96,14 +333,10 @@ function formatRelativeTime(dateString) {
 function populateUserInfo() {
   const config = window.CONFIG || {};
 
-  // Set user info from config
-  document.getElementById('userName').textContent = config.userName || 'Developer';
-  const bioElement = document.getElementById('userBio');
-  if (config.userBio) {
-    bioElement.textContent = config.userBio;
-  } else {
-    bioElement.style.display = 'none';
-  }
+  // Render ASCII art name in header
+  const userName = config.userName || 'Developer';
+  const asciiLogo = document.getElementById('asciiLogo');
+  asciiLogo.textContent = renderAsciiText(userName);
 
   // Update page title
   if (config.siteTitle) {
@@ -203,18 +436,65 @@ function populateStats(stats) {
     : 'Never updated';
 }
 
+// Pagination state
+let activityCurrentPage = 1;
+const activityPageSize = 10;
+let activityDaysData = [];
+
 function populateActivity(days) {
   const activityContainer = document.getElementById('recentActivity');
+  const prevBtn = document.getElementById('prevPage');
+  const nextBtn = document.getElementById('nextPage');
+  const pageInfo = document.getElementById('pageInfo');
 
   if (!days || days.length === 0) {
     activityContainer.innerHTML = '<div class="loading">No activity data available. Upload your first report!</div>';
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+    pageInfo.style.display = 'none';
     return;
   }
 
-  // Show last 10 days
-  const recentDays = days.slice(-10).reverse();
+  // Store days data for pagination (reversed so most recent is first)
+  activityDaysData = days.slice().reverse();
+  activityCurrentPage = 1;
 
-  activityContainer.innerHTML = recentDays.map(day => `
+  // Set up pagination controls
+  prevBtn.addEventListener('click', () => {
+    if (activityCurrentPage > 1) {
+      activityCurrentPage--;
+      renderActivityPage();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    const totalPages = Math.ceil(activityDaysData.length / activityPageSize);
+    if (activityCurrentPage < totalPages) {
+      activityCurrentPage++;
+      renderActivityPage();
+    }
+  });
+
+  renderActivityPage();
+}
+
+function renderActivityPage() {
+  const activityContainer = document.getElementById('recentActivity');
+  const prevBtn = document.getElementById('prevPage');
+  const nextBtn = document.getElementById('nextPage');
+  const pageInfo = document.getElementById('pageInfo');
+
+  const totalPages = Math.ceil(activityDaysData.length / activityPageSize);
+  const startIndex = (activityCurrentPage - 1) * activityPageSize;
+  const endIndex = startIndex + activityPageSize;
+  const pageDays = activityDaysData.slice(startIndex, endIndex);
+
+  // Update pagination controls
+  prevBtn.disabled = activityCurrentPage === 1;
+  nextBtn.disabled = activityCurrentPage === totalPages;
+  pageInfo.textContent = `Page ${activityCurrentPage} of ${totalPages}`;
+
+  activityContainer.innerHTML = pageDays.map(day => `
     <div class="activity-item">
       <div class="activity-date">${formatDate(day.date)}</div>
       <div class="activity-stats">
@@ -273,11 +553,14 @@ function populateHeatmap(days) {
     dayMap[dateKey] = day;
   });
 
-  // Find max cost for scaling
+  // Find max cost and average cost for scaling
   let maxCost = 0;
+  let totalCost = 0;
   days.forEach(day => {
     if (day.totalCost > maxCost) maxCost = day.totalCost;
+    totalCost += day.totalCost;
   });
+  const avgCost = days.length > 0 ? totalCost / days.length : 0;
 
   // Generate cells
   const cells = [];
@@ -290,18 +573,24 @@ function populateHeatmap(days) {
     const dayData = dayMap[dateKey];
     const isBeforeFirstDay = currentDate < firstDay;
 
-    // Determine level (0-4)
-    let level = 0;
-    if (dayData && maxCost > 0) {
-      const ratio = dayData.totalCost / maxCost;
-      if (ratio > 0.8) level = 4;
-      else if (ratio > 0.6) level = 3;
-      else if (ratio > 0.4) level = 2;
-      else if (ratio > 0) level = 1;
+    // Calculate percentage with average at 75%
+    // Below average: linear from 0% to 75%
+    // Above average: linear from 75% to 100%
+    let percentage = 0;
+    if (dayData && dayData.totalCost > 0) {
+      const cost = dayData.totalCost;
+      if (cost <= avgCost) {
+        // Below or at average: scale from 0% to 75%
+        percentage = Math.round((cost / avgCost) * 75);
+      } else {
+        // Above average: scale from 75% to 100%
+        percentage = Math.round(75 + ((cost - avgCost) / (maxCost - avgCost)) * 25);
+      }
     }
 
     const cell = document.createElement('div');
-    cell.className = `heatmap-cell level-${level}`;
+    cell.className = 'heatmap-cell';
+    cell.style.background = `color-mix(in srgb, var(--accent) ${percentage}%, var(--bg-secondary))`;
 
     // Add empty class for cells before first day
     if (isBeforeFirstDay) {
@@ -328,7 +617,7 @@ function populateHeatmap(days) {
     currentDate.setDate(currentDate.getDate() + 1);
   }
 
-  // Add cells to grid
+  // Add cells to grid (grid-auto-flow: column will create week columns automatically)
   heatmapGrid.innerHTML = '';
   cells.forEach(cell => heatmapGrid.appendChild(cell));
 

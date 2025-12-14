@@ -5,16 +5,17 @@
 
 window.CONFIG = {
   // User Profile Information
-  userName: 'Developer',
+  // The userName will be displayed as ASCII art in the header
+  userName: 'YOUR NAME',
   userEmail: '',
-  userBio: 'Personal Claude Code usage analytics dashboard',
+  userBio: 'Claude Code usage analytics.',
   userLocation: '',
   userTimezone: '',
 
   // Social Links (leave blank to hide)
   socials: {
     github: '',      // GitHub username (e.g., 'octocat')
-    twitter: '',     // Twitter handle (e.g., 'jack')
+    twitter: '',     // Twitter/X handle (e.g., 'jack')
     linkedin: '',    // Full LinkedIn URL (e.g., 'https://linkedin.com/in/username')
     website: ''      // Personal website URL (e.g., 'https://example.com')
   },

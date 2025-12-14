@@ -1,0 +1,54 @@
+{
+  "lifetime": {
+    "totalCost": 3139.75,
+    "totalTokens": 3535525283,
+    "dayCount": 339,
+    "averageCost": 9.26,
+    "averageTokens": 10429278
+  },
+  "yearly": {
+    "totalCost": 3139.75,
+    "totalTokens": 3535525283,
+    "dayCount": 339,
+    "averageCost": 9.26,
+    "averageTokens": 10429278
+  },
+  "monthly": {
+    "totalCost": 249.01,
+    "totalTokens": 280160427,
+    "dayCount": 28,
+    "averageCost": 8.89,
+    "averageTokens": 10005730
+  },
+  "weekly": {
+    "totalCost": 51.57,
+    "totalTokens": 57940845,
+    "dayCount": 8,
+    "averageCost": 6.45,
+    "averageTokens": 7242606
+  },
+  "daily": {
+    "totalCost": 3.27,
+    "totalTokens": 3849402
+  },
+  "highest": {
+    "day": {
+      "totalCost": 48.6,
+      "totalTokens": 53584646,
+      "date": "2025-01-11"
+    },
+    "week": {
+      "totalCost": 61.88,
+      "totalTokens": 69529014
+    },
+    "month": {
+      "totalCost": 273.91,
+      "totalTokens": 308176470
+    }
+  },
+  "streaks": {
+    "currentStreak": 9,
+    "longestStreak": 40
+  },
+  "lastUpdated": "2025-12-14T12:00:00.000Z"
+}

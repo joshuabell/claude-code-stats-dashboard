@@ -10,19 +10,19 @@ A self-hosted, single-user analytics dashboard for tracking your Claude Code usa
 ![License](https://img.shields.io/badge/License-MIT-blue)
 ![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-brightgreen)
 
-## ✨ Features
+## Features
 
-- 📊 **Comprehensive Stats**: Lifetime, daily, weekly, and monthly usage metrics
-- 🔥 **Streak Tracking**: Monitor your current and longest usage streaks
-- 📈 **Activity Heatmap**: GitHub-style contribution graph of your usage
-- 📅 **Activity Timeline**: View detailed daily usage breakdown
-- 🎨 **ASCII Art Theme**: Developer-friendly retro design
-- 🌓 **Dark/Light Mode**: Automatic theme switching with preference persistence
-- 🚀 **Zero Config**: No databases, no API keys, no external services
-- 📁 **Git-Based Storage**: All stats stored as JSON files in your repo
-- 🌐 **Deploy Anywhere**: GitHub Pages, Cloudflare Pages, Netlify, or any static host
+- **Comprehensive Stats**: Lifetime, daily, weekly, and monthly usage metrics
+- **Streak Tracking**: Monitor your current and longest usage streaks
+- **Activity Heatmap**: GitHub-style contribution graph of your usage
+- **Activity Timeline**: Paginated daily usage breakdown
+- **Dynamic ASCII Art**: Your name rendered as ASCII art in the header
+- **Dark/Light Mode**: Automatic theme switching with preference persistence
+- **Zero Config**: No databases, no API keys, no external services
+- **Git-Based Storage**: All stats stored as JSON files in your repo
+- **Deploy Anywhere**: GitHub Pages, Cloudflare Pages, Netlify, or any static host
 
-## 🚀 Quick Start (3 steps, < 5 minutes)
+## Quick Start (3 steps, < 5 minutes)
 
 ### 1. Fork & Clone
 
@@ -35,11 +35,11 @@ npm install
 
 ### 2. Configure Your Profile
 
-Edit `public/config.js` with your info:
+Edit `config.js` with your info:
 
 ```javascript
 window.CONFIG = {
-  userName: 'Your Name',
+  userName: 'Your Name',  // Displayed as ASCII art in header
   userBio: 'Your bio here',
   socials: {
     github: 'yourusername',
@@ -63,7 +63,7 @@ git push
 
 **That's it!** Your dashboard will be live at `https://YOUR_USERNAME.github.io/claude-code-stats-dashboard` in ~1 minute.
 
-## 📖 Detailed Setup
+## Detailed Setup
 
 ### Enable GitHub Pages
 
@@ -77,9 +77,9 @@ git push
 
 Want `stats.yourdomain.com` instead of `username.github.io/repo`?
 
-1. Add a `CNAME` file to `public/`:
+1. Add a `CNAME` file to the root of your repo:
    ```bash
-   echo "stats.yourdomain.com" > public/CNAME
+   echo "stats.yourdomain.com" > CNAME
    ```
 
 2. Add DNS records at your domain provider:
@@ -98,7 +98,7 @@ Want `stats.yourdomain.com` instead of `username.github.io/repo`?
 
 GitHub provides **free SSL certificates** automatically!
 
-## 🔄 Updating Your Stats
+## Updating Your Stats
 
 ### Manual Upload
 
@@ -118,20 +118,21 @@ Set up a cron job:
 
 This runs every day at 11 PM, updates your stats, and pushes to GitHub.
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 .
-├── public/                 # Static site files (served by GitHub Pages)
-│   ├── index.html         # Main dashboard page
-│   ├── config.js          # YOUR CONFIGURATION (edit this!)
-│   ├── css/
-│   │   └── style.css      # ASCII theme styles
-│   ├── js/
-│   │   └── app.js         # Dashboard logic
-│   └── data/              # Generated stats (auto-created)
-│       ├── stats.json     # Computed statistics
-│       └── days.json      # Daily usage data
+├── index.html             # Main dashboard page
+├── config.js              # YOUR CONFIGURATION (edit this!)
+├── css/
+│   └── style.css          # Dashboard styles
+├── js/
+│   └── app.js             # Dashboard logic (ASCII art, pagination, heatmap)
+├── data/                   # Generated stats (auto-created)
+│   ├── stats.json         # Computed statistics
+│   └── days.json          # Daily usage data
+├── images/
+│   └── example-site.png   # Screenshot for README
 ├── scripts/
 │   └── upload.js          # Data upload script
 ├── .github/
@@ -140,23 +141,23 @@ This runs every day at 11 PM, updates your stats, and pushes to GitHub.
 └── package.json           # npm scripts
 ```
 
-## 🎯 How It Works
+## How It Works
 
 1. **Data Collection**: `npm run upload` runs `ccusage` to collect your Claude Code usage data
 2. **Processing**: The script processes the data and calculates statistics locally
-3. **Storage**: Results are saved as JSON files in `public/data/`
+3. **Storage**: Results are saved as JSON files in `data/`
 4. **Commit**: You commit the updated files to your repo
 5. **Deploy**: Push to GitHub → GitHub Actions deploys to Pages
 6. **Display**: The dashboard loads and displays the data (no backend required!)
 
-## ⚙️ Configuration
+## Configuration
 
-Edit `public/config.js` to customize your dashboard:
+Edit `config.js` to customize your dashboard:
 
 ```javascript
 window.CONFIG = {
   // Profile
-  userName: 'Your Name',
+  userName: 'Your Name',        // Rendered as ASCII art in header
   userEmail: 'your@email.com',
   userBio: 'Developer & AI enthusiast',
   userLocation: 'San Francisco, CA',
@@ -178,11 +179,11 @@ window.CONFIG = {
 
 Changes take effect on next deployment (just `git push`).
 
-## 🎨 Customization
+## Customization
 
 ### Change Theme Colors
 
-Edit `public/css/style.css`:
+Edit `css/style.css`:
 
 ```css
 :root[data-theme="dark"] {
@@ -194,19 +195,9 @@ Edit `public/css/style.css`:
 
 ### Modify Stats Display
 
-Edit `public/js/app.js` to change calculations or add new metrics.
+Edit `js/app.js` to change calculations or add new metrics.
 
-### Custom ASCII Art
-
-Update the logo in `public/index.html`:
-
-```html
-<pre class="ascii-logo">
-Your custom ASCII art here
-</pre>
-```
-
-## 🌐 Deploy to Other Platforms
+## Deploy to Other Platforms
 
 This dashboard works on ANY static host. Here are quick guides:
 
@@ -214,14 +205,14 @@ This dashboard works on ANY static host. Here are quick guides:
 
 1. Connect your GitHub repo
 2. Build command: (leave empty)
-3. Build output directory: `public`
+3. Build output directory: `.` (root)
 4. Deploy!
 
 ### Netlify
 
 1. Connect your GitHub repo
 2. Build command: (leave empty)
-3. Publish directory: `public`
+3. Publish directory: `.` (root)
 4. Deploy!
 
 ### Vercel
@@ -229,12 +220,12 @@ This dashboard works on ANY static host. Here are quick guides:
 ```bash
 npm install -g vercel
 vercel
-# Follow prompts, set output directory to "public"
+# Follow prompts, set output directory to "."
 ```
 
 All platforms support custom domains with free SSL.
 
-## ⚠️ Important Notes
+## Important Notes
 
 ### Single Machine Usage
 
@@ -255,30 +246,24 @@ Your usage stats are stored in your public GitHub repo by default. If you want t
 2. GitHub Pages still works with private repos (for Pro accounts)
 3. Or use Cloudflare Pages/Netlify (both support private repos for free)
 
-## 🔧 Development
+## Development
 
 ### Local Testing
 
 ```bash
-# Serve locally
-npx http-server public -p 3000
+# Serve locally (from repo root)
+npx http-server . -p 3000
 
 # Or use any static server
-python3 -m http.server 3000 --directory public
+python3 -m http.server 3000
 ```
 
 Visit `http://localhost:3000`
 
-### File Structure
-
-- `public/` - Everything here is deployed as-is
-- `scripts/upload.js` - Processes ccusage data
-- No build step required!
-
-## 📊 npm Scripts
+## npm Scripts
 
 ```bash
-npm run upload    # Run ccusage, process data, save to public/data/
+npm run upload    # Run ccusage, process data, save to data/
 npm run deploy    # Commit and push changes to GitHub
 ```
 
@@ -287,11 +272,11 @@ Combine them:
 npm run upload && npm run deploy
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Dashboard shows no data
 
-1. Check that `public/data/stats.json` and `public/data/days.json` exist
+1. Check that `data/stats.json` and `data/days.json` exist
 2. Run `npm run upload` to generate them
 3. Commit and push the files
 4. Wait ~1 minute for GitHub Pages to deploy
@@ -304,7 +289,7 @@ npm run upload && npm run deploy
 
 ### Custom domain not working
 
-1. Verify `CNAME` file is in `public/` directory and committed
+1. Verify `CNAME` file is in the root directory and committed
 2. Check DNS records are correct
 3. Wait for DNS propagation (up to 24 hours, usually < 1 hour)
 4. GitHub Pages → Settings → check for errors
@@ -315,29 +300,29 @@ npm run upload && npm run deploy
 2. Check that you have Claude Code usage data: `npx ccusage --json`
 3. Ensure Node.js >= 18
 
-## 🤝 Contributing
+## Contributing
 
 Contributions welcome! Feel free to:
 - Open issues for bugs or feature requests
 - Submit PRs for improvements
 - Share your customized dashboards!
 
-## 📄 License
+## License
 
 MIT License - see LICENSE file for details
 
-## 🙏 Credits
+## Credits
 
 - Built for [Claude Code](https://claude.ai/code) users
 - Uses [ccusage](https://github.com/brightbitcode/ccusage) for data collection
 - Deployed on [GitHub Pages](https://pages.github.com/) (free forever!)
 
-## ⭐ Show Your Support
+## Show Your Support
 
-If you found this useful, give it a star on GitHub! ⭐
+If you found this useful, give it a star on GitHub!
 
 ---
 
-**Made with ❤️ and Claude Code**
+**Made with Claude Code**
 
 Need help? [Open an issue](https://github.com/yourusername/claude-code-stats-dashboard/issues)

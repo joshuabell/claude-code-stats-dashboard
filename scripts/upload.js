@@ -247,7 +247,7 @@ async function main() {
 
   try {
     // Paths
-    const dataDir = path.join(__dirname, '..', 'public', 'data');
+    const dataDir = path.join(__dirname, '..', 'data');
     const statsFile = path.join(dataDir, 'stats.json');
     const daysFile = path.join(dataDir, 'days.json');
 

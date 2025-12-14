@@ -8,19 +8,11 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header with ASCII Art -->
+        <!-- Header with ASCII Art Name -->
         <header>
-            <pre class="ascii-logo" id="asciiLogo">
- ██████╗██╗       █████╗ ██╗   ██╗██████╗ ███████╗
-██╔════╝██║     ██╔══██╗██║   ██║██║  ██╗██╔════╝
-██║     ██║     ███████║██║   ██║██║  ██║█████╗
-██║     ██║     ██╔══██║██║   ██║██║  ██║██╔══╝
-╚██████╗███████╗██║  ██║╚██████╔╝██████╔╝███████╗
- ╚═════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝
-            </pre>
-            <div class="header-info">
-                <h1 id="userName">Loading...</h1>
-                <p id="userBio" class="bio"></p>
+            <div class="header-brand">
+                <pre class="ascii-logo" id="asciiLogo"></pre>
+                <p class="header-subtitle">CLAUDE CODE USAGE ANALYTICS</p>
             </div>
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                 <span class="theme-icon">◐</span>
@@ -142,6 +134,11 @@
                 <h2>
                     <span class="bracket">[</span> RECENT ACTIVITY <span class="bracket">]</span>
                 </h2>
+                <div class="pagination-controls">
+                    <button class="pagination-btn" id="prevPage" disabled>◄ Prev</button>
+                    <span class="pagination-info" id="pageInfo">Page 1</span>
+                    <button class="pagination-btn" id="nextPage">Next ►</button>
+                </div>
             </div>
 
             <div class="activity-list" id="recentActivity">
@@ -168,7 +165,7 @@
                 ═══════════════════════════════════════════════════════════
             </div>
             <p class="footer-text">
-                • Made with ❤️and Claude Code
+                • Made with ❤️ and Claude Code
             </p>
         </footer>
     </div>
