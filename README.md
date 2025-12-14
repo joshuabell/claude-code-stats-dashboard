@@ -4,7 +4,7 @@ A self-hosted, single-user analytics dashboard for tracking your Claude Code usa
 
 ![Dashboard Preview](images/example-site.png)
 
-**[View Live Example →](https://teamofone.dev)**
+**[View Live Demo →](https://joshuabell.github.io/claude-code-stats-dashboard/)**
 
 ![Dashboard Preview](https://img.shields.io/badge/Status-Active-success)
 ![License](https://img.shields.io/badge/License-MIT-blue)
