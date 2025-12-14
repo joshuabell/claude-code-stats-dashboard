@@ -49,11 +49,11 @@ window.CONFIG = {
 };
 ```
 
-### 3. Upload Your Data
+### 3. Generate and Push Your Data
 
 ```bash
-# Generate and commit your usage stats
-npm run upload
+# Generate your usage stats
+npm run stats
 
 # Push to GitHub (triggers auto-deployment)
 git add .
@@ -100,11 +100,11 @@ GitHub provides **free SSL certificates** automatically!
 
 ## Updating Your Stats
 
-### Manual Upload
+### Manual Update
 
 ```bash
-npm run upload      # Generates stats from ccusage
-npm run deploy      # Commits and pushes to GitHub
+npm run stats      # Generates stats from ccusage
+npm run push       # Commits and pushes to GitHub
 ```
 
 ### Automatic Daily Updates (Recommended)
@@ -113,7 +113,7 @@ Set up a cron job:
 
 ```bash
 # Add to your crontab (crontab -e)
-0 23 * * * cd /path/to/claude-code-stats-dashboard && npm run upload && npm run deploy
+0 23 * * * cd /path/to/claude-code-stats-dashboard && npm run stats && npm run push
 ```
 
 This runs every day at 11 PM, updates your stats, and pushes to GitHub.
@@ -143,7 +143,7 @@ This runs every day at 11 PM, updates your stats, and pushes to GitHub.
 
 ## How It Works
 
-1. **Data Collection**: `npm run upload` runs `ccusage` to collect your Claude Code usage data
+1. **Data Collection**: `npm run stats` runs `ccusage` to collect your Claude Code usage data
 2. **Processing**: The script processes the data and calculates statistics locally
 3. **Storage**: Results are saved as JSON files in `data/`
 4. **Commit**: You commit the updated files to your repo
@@ -232,7 +232,7 @@ All platforms support custom domains with free SSL.
 This dashboard is designed for **single-developer, single-machine usage**. Claude Code tracks usage data locally on each machine.
 
 **Multi-machine considerations:**
-- If you run `npm run upload` from multiple machines, the most recent upload will overwrite previous data
+- If you run `npm run stats` from multiple machines, the most recent data will overwrite previous data
 - For multiple machines, consider:
   - Deploying separate dashboard instances per machine
   - Using only one primary machine for uploads
@@ -263,13 +263,13 @@ Visit `http://localhost:3000`
 ## npm Scripts
 
 ```bash
-npm run upload    # Run ccusage, process data, save to data/
-npm run deploy    # Commit and push changes to GitHub
+npm run stats    # Run ccusage, process data, save to data/
+npm run push     # Commit and push changes to GitHub
 ```
 
 Combine them:
 ```bash
-npm run upload && npm run deploy
+npm run stats && npm run push
 ```
 
 ## Troubleshooting
@@ -277,7 +277,7 @@ npm run upload && npm run deploy
 ### Dashboard shows no data
 
 1. Check that `data/stats.json` and `data/days.json` exist
-2. Run `npm run upload` to generate them
+2. Run `npm run stats` to generate them
 3. Commit and push the files
 4. Wait ~1 minute for GitHub Pages to deploy
 

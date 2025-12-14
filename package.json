@@ -3,8 +3,8 @@
   "version": "2.0.0",
   "description": "Personal Claude Code usage analytics dashboard - GitHub Pages edition",
   "scripts": {
-    "upload": "node scripts/upload.js",
-    "deploy": "git add . && git commit -m 'Update usage stats' && git push"
+    "stats": "node scripts/stats.js",
+    "push": "git add . && git commit -m 'Update usage stats' && git push"
   },
   "keywords": [
     "claude",
