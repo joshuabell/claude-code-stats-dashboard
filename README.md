@@ -133,8 +133,7 @@ This runs every day at 11 PM, updates your stats, and pushes to GitHub.
 │   └── days.json          # Daily usage data
 ├── images/
 │   └── example-site.png   # Screenshot for README
-├── scripts/
-│   └── upload.js          # Data upload script
+├── stats.js               # Script to generate usage stats
 ├── .github/
 │   └── workflows/
 │       └── pages.yml      # GitHub Pages deployment
