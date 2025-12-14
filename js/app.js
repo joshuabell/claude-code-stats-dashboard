@@ -264,7 +264,7 @@ function initTheme() {
 
 async function loadStats() {
   try {
-    const response = await fetch('/data/stats.json');
+    const response = await fetch('data/stats.json');
     if (!response.ok) {
       throw new Error('No stats data available');
     }
@@ -278,7 +278,7 @@ async function loadStats() {
 
 async function loadDays() {
   try {
-    const response = await fetch('/data/days.json');
+    const response = await fetch('data/days.json');
     if (!response.ok) {
       throw new Error('No days data available');
     }
